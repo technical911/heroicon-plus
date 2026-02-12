@@ -1,0 +1,39 @@
+{
+    "name": "technical911/heroicon-plus",
+    "type": "statamic-addon",
+    "license": "MIT",
+    "description": "Heroicon-plus addon - This addon creates an icon field type complete with the heroicon library as well as the capability to add custom icons.",
+    "autoload": {
+        "psr-4": {
+            "Technical911\\HeroiconPlus\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Technical911\\HeroiconPlus\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "statamic/cms": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Heroicon-plus",
+            "description": "Heroicon-plus addon"
+        },
+        "laravel": {
+            "providers": [
+                "Technical911\\HeroiconPlus\\ServiceProvider"
+            ]
+        }
+    },
+    "prefer-stable": true
+}
