@@ -1,15 +1,15 @@
 
 # Heroicons
 
-> Heroicons is a Statamic addon that does something pretty neat.
+> Heroicon-plus is a statamic addon that adds a new icon fieldtype. 
 
 ## Features
 
 This addon does:
 
-- This
-- And this
-- And even this
+- Allows users to select an icon from the preinstalled heroicon library.
+- Add additional custom icons through the normal statamic interface. These custom icons share the space with the heroicon icons so you only need one field type for both.
+
 
 ## How to Install
 
@@ -21,7 +21,7 @@ composer require technical911/heroicons
 
 ## How to Use
 
-Here's where you can explain how to use this wonderful addon.
+
 
 
 
