@@ -13,10 +13,10 @@
 
 // Import pre-generated JSON indexes of available Heroicons
 // These files are created by the PublishHeroicons command
-import solidIcons from '../icons/indexes/solid.json';
-import outlineIcons from '../icons/indexes/outline.json';
-import miniIcons from '../icons/indexes/mini.json';
-import microIcons from '../icons/indexes/micro.json';
+import solidIcons from '../icons/indexes/solid.json' with { type: 'json' };
+import outlineIcons from '../icons/indexes/outline.json' with { type: 'json' };
+import miniIcons from '../icons/indexes/mini.json' with { type: 'json' };
+import microIcons from '../icons/indexes/micro.json' with { type: 'json' };
 
 /**
  * IIFE to apply embedded mode styles when Asset Manager is loaded in an iframe.

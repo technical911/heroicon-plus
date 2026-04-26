@@ -61,24 +61,21 @@ class ServiceProvider extends AddonServiceProvider
      */
     public function bootAddon()
     {
-        // Register the Control Panel JavaScript bundle
-        // This loads the Vue component for the icon picker interface
-        // The path is relative to the Statamic addons directory
-        Statamic::vite('heroicon-plus-cp', 'addons/technical911/heroicon-plus/resources/js/heroicons-cp.js');
+        // The entry path is relative to the Laravel app root.
+        // The second argument identifies the Vite build directory/package context.
+        // In development, this vendor path may be a Composer symlink to the addon repo.
+        // In production, it is the real Composer-installed package path.
+        Statamic::vite(
+            'heroicon-plus-cp',
+            'vendor/technical911/heroicon-plus/resources/js/heroicons-cp.js'
+        );
 
-        // Publish Heroicons SVG library to public directory
-        // These icons are served from /vendor/technical911-heroicon-plus/{size}/{style}/{name}.svg
-        // Users can run: php artisan vendor:publish --tag=technical911-heroicon-plus-icons
         $this->publishes([
             __DIR__ . '/../resources/icons' => public_path('vendor/technical911-heroicon-plus'),
         ], 'technical911-heroicon-plus-icons');
 
-        // Merge package config with application config
-        // Allows users to override settings in their own config file
         $this->mergeConfigFrom(__DIR__ . '/../config/heroicon-plus.php', 'technical911-heroicon-plus');
 
-        // Publish configuration file for user customization
-        // Users can run: php artisan vendor:publish --tag=technical911-heroicon-plus-config
         $this->publishes([
             __DIR__ . '/../config/heroicon-plus.php' => config_path('technical911-heroicon-plus.php'),
         ], 'technical911-heroicon-plus-config');
